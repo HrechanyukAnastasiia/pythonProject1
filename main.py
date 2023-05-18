@@ -14,5 +14,5 @@ class MyIterator:
         value = self.data[self.index]
         self.index += 1
         return value
-for num in MyIterator(lst):
+for  num in MyIterator(lst):
     print(num)
