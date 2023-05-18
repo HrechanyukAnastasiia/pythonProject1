@@ -24,18 +24,18 @@ def my_generator(data):
 for num in my_generator(lst):
     print(num)
 
-def Calc():
-    def add(a, b):
+def calc():
+    def add(a,b):
         return a + b
-    def sub(a, b):
+    def sub (a,b):
         return a - b
-    def mult(a, b):
+    def mult (a,b):
         return a * b
-    def div(a, b):
+    def div(a,b):
         if b != 0:
             return a / b
         else:
-            raise ValueError("Помилка! Ділення на нуль!")
-        return add, sub, mult, div
-add, sub, mult, div = clac() #відбувається замикання
-print(div(3, 0))
+            raise ValueError ('Помилка!')
+    return add, sub, mult, div
+add, sub, mult, div = calc()
+print(div(3, 1))
