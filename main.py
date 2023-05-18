@@ -1,16 +1,19 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#1
+class OddIterator:
+    def __init__(self, name):
+        self.name = name
+        self.index = 0
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.index >= len(self.name):
+            raise StopIteration
+        if self.index < 0:
+            raise ValueError("Помилка!")
+        value = self.name[self.index]
+        self.index += 2
+        return value
+my_list = [1,2,3,4,5,6,7,8,9,10]
+my_iter = OddIterator(my_list)
+for num in my_iter:
+    print(num)
